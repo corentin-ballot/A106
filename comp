@@ -1,0 +1,2 @@
+gcc salle.c -o $1 -lGL -lGLU -lglut -lm
+./salle
