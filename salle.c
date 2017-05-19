@@ -26,6 +26,7 @@
 #include "Libraries/Radiateur/radiateur.h"
 #include "Libraries/Exterieur/exterieur.h"
 #include "Libraries/Fenetre/fenetre.h"
+#include "Libraries/Imprimante/imprimante.h"
 #include "Libraries/Salle/salle.h"
 
 #define FPS 30
@@ -70,6 +71,7 @@ void afficher() {
 
   glCallList(SALLE);
 
+  placementImprimante();
   placement_exterieur();
 
   placement_fenetres();
@@ -207,22 +209,22 @@ void key(unsigned char key, int x, int y) {
 
   // Restriction de déplacement dans la salle
   // Restriction X
-  if(observateur_x >= 610.0/2.0)
+  /*if(observateur_x >= 610.0/2.0-20)
     observateur_x = 610.0/2.0-10;
-  if(observateur_x <= -610.0/2.0)
+  if(observateur_x <= -610.0/2.0+20)
     observateur_x = -610.0/2.0+10;
 
   // Restriction Y
-  if(observateur_y >= 275.0)
-    observateur_y = 275.0-10;
-  if(observateur_y <= -275.0)
-    observateur_y = -275.0+10;
+  if(observateur_y >= 275.0-20)
+    observateur_y = 275.0-20;
+  if(observateur_y <= 0.0+20)
+    observateur_y = 0.0+20;
 
   // Restriction Z
-  if(observateur_z >= 990.0/2.0)
-    observateur_z = 990.0/2.0-10;
-  if(observateur_z <= -990.0/2.0)
-    observateur_z = -990.0/2.0+10;
+  if(observateur_z >= 990.0/2.0-20)
+    observateur_z = 990.0/2.0-20;
+  if(observateur_z <= -990.0/2.0+20)
+    observateur_z = -990.0/2.0+20;*/
 
   // Mise à jour du point de visé
   initPointVise();
@@ -286,6 +288,7 @@ void initObjets() {
   construire_chaise();
   construire_clavier();
   construire_fenetre();
+  construire_imprimante();
   construire_salle();
 }
 
