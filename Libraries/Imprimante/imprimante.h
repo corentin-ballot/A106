@@ -24,3 +24,11 @@ void construire_imprimante(){
     glEndList();
 }
 
+void placementImprimante() {
+    glPushMatrix();
+    glTranslatef((610 - 160)/2 + 50.0, 75.0, 990/2 - 80/2);
+    glRotatef(-90, 0, 1.0, 0);
+    glCallList(IMPRIMANTE);
+    glPopMatrix();
+}
+
