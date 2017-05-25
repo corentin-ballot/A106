@@ -259,11 +259,11 @@ void key(unsigned char key, int x, int y) {
       }
       break;
 
-      case 'x': // Ecran videoproj
-        observateur_y += 10;
+      case 'p': // Mode M. Ponty
+        observateur_y = 70;
         break;
-        case 'w': // Ecran videoproj
-          observateur_y -= 10;
+        case 'n': // Ecran videoproj
+          observateur_y = 170;
           break;
 		default:
 			break;
