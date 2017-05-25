@@ -56,14 +56,14 @@ void placementPortes() {
         glPopMatrix();
     glPopMatrix();
 
-    // Porte mur est
+    // Porte mur est (retirer les commentaire pour permettre l'ouverture)
     glPushMatrix();
     glTranslatef(610.0/2.0 + 3.8/2 - 0.1, 0.0, -990.0 / 2.0 + 30);
-    glRotatef(-90 - 90 * OUVERTURE_PORTE, 0.0, 1.0, 0.0);
+    glRotatef(-90 /*- 90 * OUVERTURE_PORTE*/, 0.0, 1.0, 0.0);
     glCallList(PORTE);
         glPushMatrix();
         glTranslatef(91.8 - 5.5, 203.3/2 +3.0, 0.0);
-        glRotatef(45 * OUVERTURE_CLANCHE, 0.0, 0.0, 1.0);
+        //glRotatef(45 * OUVERTURE_CLANCHE, 0.0, 0.0, 1.0);
         glCallList(CLANCHE);
         glPopMatrix();
     glPopMatrix();
