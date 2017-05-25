@@ -65,17 +65,16 @@ void afficher() {
                                                         /* Point vis�   : (0.0,0.0,0.0)                */
                                                         /* Orientation  : (0.0,1.0,0.0)                */
 
-  /*float l1[4] = { observateur_x, observateur_y, observateur_z, 1};
-  glLightfv(lumieres[0],   GL_POSITION, l1);*/
   /* MODELISATION : construction de la sc�ne */
 
-  glCallList(SALLE);
 
-  placementImprimante();
+
   placement_exterieur();
 
+  // A106
+  glCallList(SALLE);
+  placementImprimante();
   placement_fenetres();
-
   placementTables();
   placementChaises();
   placementOrdinateurs();
@@ -83,6 +82,69 @@ void afficher() {
   placementPortes();
   placement_ecran_videoproj();
   placementClaviers();
+
+  // A108
+  glPushMatrix();
+  glTranslatef(0, 0, 990 + 3.5);
+    glCallList(SALLE);
+    placementImprimante();
+    placement_fenetres();
+    placementTables();
+    placementChaises();
+    placementOrdinateurs();
+    placementEcrans();
+    //placementPortes();
+    //placement_ecran_videoproj();
+    placementClaviers();
+
+    // Porte mur sud
+    glPushMatrix();
+    glTranslatef(-610.0/2.0 + 10, 0.0, +990.0 / 2.0 + 3.8/2 - 0.1);
+    glCallList(PORTE);
+        glPushMatrix();
+        glTranslatef(91.8 - 5.5, 203.3/2 +3.0, 0.0);
+        glCallList(CLANCHE);
+        glPopMatrix();
+    glPopMatrix();
+
+  glPopMatrix();
+
+  // A104
+  glPushMatrix();
+  glTranslatef(0, 0, -990 - 3.5);
+    glCallList(SALLE);
+    placementImprimante();
+    placement_fenetres();
+    placementTables();
+    placementChaises();
+    placementOrdinateurs();
+    placementEcrans();
+    //placementPortes();
+    //placement_ecran_videoproj();
+    placementClaviers();
+
+    // Porte mur nord
+    glPushMatrix();
+    glTranslatef(-610.0/2.0 + 10, 0.0, -990.0 / 2.0 - 3.8/2 + 0.1);
+    glCallList(PORTE);
+        glPushMatrix();
+        glTranslatef(91.8 - 5.5, 203.3/2 +3.0, 0.0);
+        glCallList(CLANCHE);
+        glPopMatrix();
+    glPopMatrix();
+
+    // Porte mur est
+    glPushMatrix();
+    glTranslatef(610.0/2.0 + 3.8/2 - 0.1, 0.0, -990.0 / 2.0 + 30);
+    glRotatef(-90, 0.0, 1.0, 0.0);
+    glCallList(PORTE);
+        glPushMatrix();
+        glTranslatef(91.8 - 5.5, 203.3/2 +3.0, 0.0);
+        glCallList(CLANCHE);
+        glPopMatrix();
+    glPopMatrix();
+  glPopMatrix();
+
 
   // Animation des portes
   if(PORTE_OPENING && OUVERTURE_PORTE < 1)
@@ -209,14 +271,14 @@ void key(unsigned char key, int x, int y) {
 
   // Restriction de déplacement dans la salle
   // Restriction X
-  /*if(observateur_x >= 610.0/2.0-20)
+  if(observateur_x >= 610.0/2.0-20)
     observateur_x = 610.0/2.0-10;
   if(observateur_x <= -610.0/2.0+20)
     observateur_x = -610.0/2.0+10;
 
   // Restriction Y
-  if(observateur_y >= 275.0-20)
-    observateur_y = 275.0-20;
+  if(observateur_y >= 180.0)
+    observateur_y = 180.0;
   if(observateur_y <= 0.0+20)
     observateur_y = 0.0+20;
 
@@ -224,7 +286,7 @@ void key(unsigned char key, int x, int y) {
   if(observateur_z >= 990.0/2.0-20)
     observateur_z = 990.0/2.0-20;
   if(observateur_z <= -990.0/2.0+20)
-    observateur_z = -990.0/2.0+20;*/
+    observateur_z = -990.0/2.0+20;
 
   // Mise à jour du point de visé
   initPointVise();
@@ -316,6 +378,8 @@ main(int argc, char **argv)
   glEnable(GL_NORMALIZE);
   glEnable(GL_RESCALE_NORMAL);
   glEnable(GL_TEXTURE_2D);
+  glEnable(GL_BLEND);
+  glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
   initPointVise();
   initObjets();
