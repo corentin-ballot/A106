@@ -45,7 +45,17 @@ placement_exterieur() {
     glCallList(PASSERELLE_EXTERIEUR);
     glCallList(CIEL_EXTERIEUR);
     glDisable(GL_DEPTH_TEST);
+
+    glPushMatrix();
+    glTranslatef(-300, 0, -900);
     glCallList(ARBRE);
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(-50, 0, -800);
+    glCallList(ARBRE);
+    glPopMatrix();
+
     glEnable(GL_DEPTH_TEST);
     glPopMatrix();
 }
