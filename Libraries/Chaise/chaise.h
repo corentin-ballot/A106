@@ -40,7 +40,7 @@ void placementChaises() {
   glPopMatrix();
 
   glPushMatrix(); // Prépare "l'environement de transformation"
-  glTranslatef(610/2-3*160/4 - 160, -40.0, -990/2 +125);
+  glTranslatef(610/2-3*160/4 - 160, -30.0, -990/2 +125);
   glRotatef(180, 0.0, 1.0, 0.0);
   glCallList(CHAISE);
   glPopMatrix();
