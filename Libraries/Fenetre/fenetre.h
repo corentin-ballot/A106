@@ -76,6 +76,18 @@ void construire_fenetre(){
     glPopMatrix();
     def_material(MATERIAL_DEFAULT);
 
+    // Vitre
+    /*def_material(MATERIAL_GLASS);
+    glDisable(GL_TEXTURE_2D);
+    glPushMatrix();
+    glTranslatef(0, 172/2.0, 2);
+    glRotatef(180, 0, 0, 1);
+    glScalef(220, 172, 2);
+    glCallList(CUBE);
+    glPopMatrix();
+    glEnable(GL_TEXTURE_2D);
+    def_material(MATERIAL_DEFAULT);*/
+
     glEndList();
 }
 
