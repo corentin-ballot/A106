@@ -27,6 +27,7 @@ float MATERIAL_GREEN_RUBBER[4][4] = {{ 0.0f,0.05f,0.0f,1.0f },{ 0.4f,0.5f,0.4f,1
 float MATERIAL_RED_RUBBER[4][4] = {{ 0.05f,0.0f,0.0f,1.0f },{ 0.5f,0.4f,0.4f,1.0f},{ 0.7f,0.04f,0.04f,1.0f},{10.0f}};
 float MATERIAL_WHITE_RUBBER[4][4] = {{ 0.05f,0.05f,0.05f,1.0f },{ 0.5f,0.5f,0.5f,1.0f},{ 0.7f,0.7f,0.7f,1.0f},{10.0f}};
 float MATERIAL_YELLOW_RUBBER[4][4] = {{ 0.05f,0.05f,0.0f,1.0f },{0.5f,0.5f,0.4f,1.0f},{0.7f,0.7f,0.04f,1.0f },{10.0f}};
+float MATERIAL_GLASS[4][4] = {{ 0.0f,0.0f,0.f,0.0f },{0.0f,0.0f,0.0f,0.0f},{0.0f,0.0f,0.0f,0.0f },{0.0f}};
 float MATERIAL_DEFAULT[4][4] = {{ 1.0f,1.0f,1.0f,1.0f },{ 1.0f,1.0f,1.0f,1.0f },{ 1.0f,1.0f,1.0f,1.0f },{60.0f}};
 
 void def_material(float (*material)[4]) {
