@@ -25,5 +25,13 @@ void construire_salle() {
     glCallList(MUR_NORD);
     glCallList(MUR_SUD);
 
+    placementImprimante();
+    placementTables();
+    placementChaises();
+    placementOrdinateurs();
+    placementEcrans();
+    placementClaviers();
+    placement_fenetres();
+
     glEndList();
 }

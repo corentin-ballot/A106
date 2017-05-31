@@ -66,36 +66,19 @@ void afficher() {
                                                         /* Orientation  : (0.0,1.0,0.0)                */
 
   /* MODELISATION : construction de la sc�ne */
-
-
-
+  
+  // Décors exterieur
   placement_exterieur();
 
   // A106
   glCallList(SALLE);
-  placementImprimante();
-  placement_fenetres();
-  placementTables();
-  placementChaises();
-  placementOrdinateurs();
-  placementEcrans();
   placementPortes();
   placement_ecran_videoproj();
-  placementClaviers();
 
   // A108
   glPushMatrix();
   glTranslatef(0, 0, 990 + 3.5);
     glCallList(SALLE);
-    placementImprimante();
-    placement_fenetres();
-    placementTables();
-    placementChaises();
-    placementOrdinateurs();
-    placementEcrans();
-    //placementPortes();
-    //placement_ecran_videoproj();
-    placementClaviers();
 
     // Porte mur sud
     glPushMatrix();
@@ -113,15 +96,6 @@ void afficher() {
   glPushMatrix();
   glTranslatef(0, 0, -990 - 3.5);
     glCallList(SALLE);
-    placementImprimante();
-    placement_fenetres();
-    placementTables();
-    placementChaises();
-    placementOrdinateurs();
-    placementEcrans();
-    //placementPortes();
-    //placement_ecran_videoproj();
-    placementClaviers();
 
     // Porte mur nord
     glPushMatrix();
